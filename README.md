@@ -3,7 +3,7 @@ scrapbox.nvim
 
 [![Build Status](https://travis-ci.org/FGtatsuro/scrapbox.nvim.svg?branch=master)](https://travis-ci.org/FGtatsuro/scrapbox.nvim)
 
-Nvim plugin to access Scrapbox(<https://scrapbox.io/>).
+Neovim plugin to access Scrapbox(<https://scrapbox.io/>).
 
 Requirements
 ------------
