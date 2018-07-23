@@ -17,6 +17,20 @@ This software may work even if these requirements aren't met, but the behavior o
 How to
 ------
 
+1. Start Neovim with `SCRAPBOX_PROJECT_URL` as an environment variable.
+
+```bash
+SCRAPBOX_PROJECT_URL=<YOUR_PROJECT_URL> nvim
+```
+
+2. Access a scrapbox page via `ScrapboxAccessPage` command.
+   The page with given name is opend via Webbrowser.
+
+```
+# In Neovim
+:ScrapboxAccessPage vim
+```
+
 Development
 -----------
 
