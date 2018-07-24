@@ -28,7 +28,11 @@ SCRAPBOX_PROJECT_URL=<YOUR_PROJECT_URL> nvim
 
 ```
 # In Neovim
+# With title
 :ScrapboxAccessPage vim
+
+# With title and body
+:ScrapboxAccessPage vim 本文
 ```
 
 Development
