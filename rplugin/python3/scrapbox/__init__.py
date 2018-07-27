@@ -17,12 +17,10 @@ class ScrapboxPlugin():
     def test_command(self):
         self.nvim.command('echo "TestCommand"')
 
-    @neovim.command('ScrapboxAccessPage', nargs='+')
-    def access_page(self, args):
+    @neovim.command('ScrapboxAccessPage', nargs='1', range='%')
+    def access_page(self, args, range):
         title = args[0]
-        body = None
-        if len(args) == 2:
-            body = args[1]
+        body = '\n'.join(self.nvim.current.buffer[slice(*range)])
         self.handler.access_page(title, body)
 
 # https://wiki.python.org/moin/Vim
