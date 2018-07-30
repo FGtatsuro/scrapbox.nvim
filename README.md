@@ -17,10 +17,10 @@ This software may work even if these requirements aren't met, but the behavior o
 How to
 ------
 
-1. Start Neovim with `SCRAPBOX_PROJECT_URL` as an environment variable.
+1. Set an URL of your Scrapbox project to a variable `g:scrapbox#project_url`.
 
-```bash
-SCRAPBOX_PROJECT_URL=<YOUR_PROJECT_URL> nvim
+```vim
+let g:scrapbox#project_url = "https://scrapbox.io/your_project_url"
 ```
 
 2. Access a scrapbox page via `ScrapboxAccessPage` command.
@@ -38,11 +38,11 @@ SCRAPBOX_PROJECT_URL=<YOUR_PROJECT_URL> nvim
 Development
 -----------
 
-1. Start Neovim with a config file to load a plugin of this project.
+1. Start Neovim with a config file and an environment variable `SCRAPBOX_PROJECT_URL` to load a plugin of this project.
 
 ```bash
 # FYI: https://github.com/neovim/python-client/blob/master/docs/usage/remote-plugins.rst
-$ nvim -u tests/vimrc
+$ SCRAPBOX_PROJECT_URL='https://scrapbox.io/your_project_url' nvim -u tests/vimrc
 ```
 
 2. Update the remote plugin manifest, and check futures of your plugin.
