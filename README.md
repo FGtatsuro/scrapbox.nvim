@@ -26,11 +26,10 @@ let g:scrapbox#project_url = "https://scrapbox.io/your_project_url"
 
 ```
 # In Neovim
-# With title
+# In this case, a page 'https://scrapbox.io/your_project_url/vim' is opened.
+# If the page doesn't exist, it is created with current buffer.
+# If the page exists, the contents of current buffer are appended to it.
 :ScrapboxAccessPage vim
-
-# With title and body
-:ScrapboxAccessPage vim 本文
 ```
 
 Development
