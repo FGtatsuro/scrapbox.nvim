@@ -11,7 +11,8 @@ class ScrapboxPlugin():
 
     def __init__(self, nvim):
         self.nvim = nvim
-        self.handler = ScrapboxHandler()
+        # Note: In initialization phase(=in __init__ method), Neovim APIs mayn't be used properly.
+        self.handler = ScrapboxHandler(self.nvim)
 
     @neovim.command('ScrapboxTestCommand')
     def test_command(self):
