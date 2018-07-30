@@ -43,10 +43,15 @@ Development
 $ NVIM_PYTHON_LOG_LEVEL=DEBUG NVIM_PYTHON_LOG_FILE=./scrapbox.log SCRAPBOX_PROJECT_URL='https://scrapbox.io/your_project_url' nvim -u tests/vimrc
 ```
 
-2. Update the remote plugin manifest, and check futures of your plugin.
+2. Update the remote plugin manifest and restart Neovim. After that, please check futures of your plugin.
 
 ```
 # In Neovim
 :UpdateRemotePlugins
+:qa!
+
+...
+
+$ (Same command to step1)
 :(Run plugin's command/function/mapping and so on)
 ```
