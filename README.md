@@ -11,6 +11,7 @@ This software may work even if these requirements aren't met, but the behavior o
 
 - Neovim (>= 0.3.x)
 - Python (>= 3.7.x)
+- Google Chrome
 
 How to
 ------
