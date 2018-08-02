@@ -1,2 +1,3 @@
 __pycache__
 scrapbox.log*
+.mypy_cache
