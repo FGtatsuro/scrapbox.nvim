@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
 import urllib.parse
 
 import webbrowser
@@ -15,7 +14,9 @@ class ScrapboxHandler():
 
     def access_page(self, title, body):
         if 'scrapbox#project_url' not in self.nvim.vars:
-            self.nvim.err_write('[scrapbox] This plugin requires g:scrapbox#project_url\n', async_=True)
+            self.nvim.err_write(
+                '[scrapbox] This plugin requires g:scrapbox#project_url\n',
+                async_=True)
             return
         page_url = f"{self.nvim.vars['scrapbox#project_url']}/{title}"
         if body:
