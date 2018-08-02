@@ -13,6 +13,36 @@ This software may work even if these requirements aren't met, but the behavior o
 - Python (>= 3.7.x)
 - Google Chrome
 
+Installation
+------------
+
+1. Create a directory to put this plugin.
+
+```bash
+$ mkdir -p ~/.config/nvim/bundle
+```
+
+2. Clone this project under step1's directory.
+
+```bash
+$ git clone git@github.com:FGtatsuro/scrapbox.nvim.git ~/.config/nvim/bundle/scrapbox.nvim
+```
+
+3. Add a directory of cloned this project to `$runtimepath`.
+
+```vim
+" Your vimrc
+let &runtimepath.=','.$HOME.'/.config/nvim/bundle/scrapbox.nvim'
+```
+
+4. Update plugin info.
+
+```vim
+# In Neovim
+:UpdateRemotePlugins
+:qa!
+```
+
 How to
 ------
 
