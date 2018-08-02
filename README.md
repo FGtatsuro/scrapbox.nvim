@@ -1,8 +1,6 @@
 scrapbox.nvim
 ==================================================
 
-[![Build Status](https://travis-ci.org/FGtatsuro/scrapbox.nvim.svg?branch=master)](https://travis-ci.org/FGtatsuro/scrapbox.nvim)
-
 Neovim plugin to access Scrapbox(<https://scrapbox.io/>).
 
 Requirements
@@ -13,14 +11,45 @@ This software may work even if these requirements aren't met, but the behavior o
 
 - Neovim (>= 0.3.x)
 - Python (>= 3.7.x)
+- Google Chrome
+
+Installation
+------------
+
+1. Create a directory to put this plugin.
+
+```bash
+$ mkdir -p ~/.config/nvim/bundle
+```
+
+2. Clone this project under step1's directory.
+
+```bash
+$ git clone git@github.com:FGtatsuro/scrapbox.nvim.git ~/.config/nvim/bundle/scrapbox.nvim
+```
+
+3. Add a directory of cloned this project to `$runtimepath`.
+
+```vim
+" Your vimrc
+let &runtimepath.=','.$HOME.'/.config/nvim/bundle/scrapbox.nvim'
+```
+
+4. Update plugin info.
+
+```vim
+# In Neovim
+:UpdateRemotePlugins
+:qa!
+```
 
 How to
 ------
 
-1. Start Neovim with `SCRAPBOX_PROJECT_URL` as an environment variable.
+1. Set an URL of your Scrapbox project to a variable `g:scrapbox#project_url`.
 
-```bash
-SCRAPBOX_PROJECT_URL=<YOUR_PROJECT_URL> nvim
+```vim
+let g:scrapbox#project_url = "https://scrapbox.io/your_project_url"
 ```
 
 2. Access a scrapbox page via `ScrapboxAccessPage` command.
@@ -28,27 +57,32 @@ SCRAPBOX_PROJECT_URL=<YOUR_PROJECT_URL> nvim
 
 ```
 # In Neovim
-# With title
+# In this case, a page 'https://scrapbox.io/your_project_url/vim' is opened.
+# If the page doesn't exist, it is created with current buffer.
+# If the page exists, the contents of current buffer are appended to it.
 :ScrapboxAccessPage vim
-
-# With title and body
-:ScrapboxAccessPage vim 本文
 ```
 
 Development
 -----------
 
-1. Start Neovim with a config file to load a plugin of this project.
+1. Start Neovim with a config file and an environment variable `SCRAPBOX_PROJECT_URL` to load a plugin of this project.
+   If `NVIM_PYTHON_LOG_FILE` and `=NVIM_PYTHON_LOG_FILE` are set, you can check logs of Neovim.
 
 ```bash
 # FYI: https://github.com/neovim/python-client/blob/master/docs/usage/remote-plugins.rst
-$ nvim -u tests/vimrc
+$ NVIM_PYTHON_LOG_LEVEL=DEBUG NVIM_PYTHON_LOG_FILE=./scrapbox.log SCRAPBOX_PROJECT_URL='https://scrapbox.io/your_project_url' nvim -u tests/vimrc
 ```
 
-2. Update the remote plugin manifest, and check futures of your plugin.
+2. Update the remote plugin manifest and restart Neovim. After that, please check futures of your plugin.
 
 ```
 # In Neovim
 :UpdateRemotePlugins
+:qa!
+
+...
+
+$ (Same command to step1)
 :(Run plugin's command/function/mapping and so on)
 ```
