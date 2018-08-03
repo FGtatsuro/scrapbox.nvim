@@ -67,7 +67,7 @@ Development
 -----------
 
 1. Start Neovim with a config file and an environment variable `SCRAPBOX_PROJECT_URL` to load a plugin of this project.
-   If `NVIM_PYTHON_LOG_FILE` and `=NVIM_PYTHON_LOG_FILE` are set, you can check logs of Neovim.
+   If `NVIM_PYTHON_LOG_FILE` and `NVIM_PYTHON_LOG_FILE` are set, you can check logs of Neovim.
 
 ```bash
 # FYI: https://github.com/neovim/python-client/blob/master/docs/usage/remote-plugins.rst
